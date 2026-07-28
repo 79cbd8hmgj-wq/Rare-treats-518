@@ -24,8 +24,13 @@ import { navigation, site } from "../data/content";
     </div>
     <div>
       <h2>Follow along</h2>
-      <a class="social" href={site.social.instagram} target="_blank" rel="noreferrer">Instagram · @raretreats518</a>
-      <p class="small">New treat drops and market dates are announced there first.</p>
+      <div class="social-links">
+        <a class="social" href={site.social.instagram} target="_blank" rel="noreferrer">Instagram @raretreats518</a>
+        {site.social.facebook && (
+          <a class="social" href={site.social.facebook} target="_blank" rel="noreferrer">Facebook Rare Treats 518</a>
+        )}
+      </div>
+      <p class="small">New treats and market dates are shared on social media.</p>
     </div>
   </div>
   <div class="site-shell footer-bottom">
@@ -73,7 +78,8 @@ import { navigation, site } from "../data/content";
     text-transform: uppercase;
   }
 
-  nav {
+  nav,
+  .social-links {
     display: grid;
     gap: 0.65rem;
   }
