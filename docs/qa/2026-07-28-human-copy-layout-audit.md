@@ -30,7 +30,7 @@ The production artifact was rendered with Chromium at all five sizes for every p
 - Markets: pass
 - About: pass
 - FAQ: pass; disclosure controls work
-- Contact: pass
+- Contact: pass; Instagram and Facebook links are visible
 
 ## Interaction and console checks
 
@@ -40,10 +40,14 @@ The production artifact was rendered with Chromium at all five sizes for every p
 - Treat number/icon collisions: none at any tested width
 - Console errors: none
 - Page errors: none
+- Facebook link on Contact page: pass
+- Facebook link in footer: pass
 
 ## Manual review findings
 
 The first rendered pass found one remaining 320px issue: the longer Treats action put its arrow on a separate line. The link was shortened to “Ask about it →,” then the complete automated and visual sequence was repeated successfully.
+
+A later copy review found stylized em dashes in two large headings and one treat description. Those sentences were rewritten with normal punctuation. The voice verifier now rejects em dashes and en dashes in customer-facing source files so the pattern cannot return.
 
 ## Copy review
 
