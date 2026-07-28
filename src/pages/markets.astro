@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { events, site } from "../data/content";
+---
+
+<BaseLayout title="Markets & Events" description="Find Rare Treats 518 at local markets, pop-ups, and community events around Troy and the Capital Region.">
+  <section class="page-hero markets-hero">
+    <div class="site-shell hero-grid">
+      <div>
+        <p class="eyebrow">Markets & community events</p>
+        <h1>The table changes every time you find it.</h1>
+        <p class="lede">Market days are where Rare Treats 518 can bring rotating flavors, packaged treats, and limited specials directly into the community.</p>
+      </div>
+      <div class="date-card">
+        <span>Next confirmed date</span>
+        <strong>To be announced</strong>
+        <p>{events.announcement}</p>
+        <a href={site.social.instagram} target="_blank" rel="noreferrer">Follow @raretreats518 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight event-types">
+    <div class="site-shell">
+      <p class="eyebrow">Where Rare Treats shows up</p>
+      <div class="type-grid">
+        {events.pastPresence.map((item, index) => (
+          <article><span>0{index + 1}</span><h2>{item}</h2></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section market-day">
+    <div class="site-shell day-grid">
+      <div>
+        <p class="eyebrow">Before you visit</p>
+        <h2>Come early for the widest selection.</h2>
+      </div>
+      <div class="day-notes">
+        <p>Inventory can be different at every event and items may sell out. A social post or handwritten event menu is a snapshot of that date, not a permanent website catalog.</p>
+        <p>For a specific celebration or larger quantity, use the custom-order process instead of relying on event inventory.</p>
+        <a class="button" href="/custom-orders">Request a custom order</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(18rem, 0.55fr);
+    gap: clamp(2rem, 8vw, 7rem);
+    align-items: center;
+  }
+
+  .date-card {
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border-radius: 2rem;
+    background: var(--blueberry);
+    color: white;
+    box-shadow: var(--shadow);
+  }
+
+  .date-card > span {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--aqua);
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .date-card strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .date-card p,
+  .date-card a {
+    color: rgba(255,255,255,.72);
+  }
+
+  .date-card p {
+    margin-top: 1.2rem;
+  }
+
+  .date-card a {
+    font-weight: 800;
+  }
+
+  .event-types {
+    background: rgba(255,255,255,.56);
+  }
+
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .type-grid article {
+    min-height: 15rem;
+    padding: 1.5rem;
+    border-right: 1px solid var(--line);
+  }
+
+  .type-grid article:last-child {
+    border-right: 0;
+  }
+
+  .type-grid span {
+    color: var(--blush-deep);
+    font-size: .72rem;
+    font-weight: 850;
+  }
+
+  .type-grid h2 {
+    margin-top: 5rem;
+    font-size: clamp(1.65rem, 3vw, 2.7rem);
+  }
+
+  .market-day {
+    background: linear-gradient(90deg, rgba(117,213,208,.16), rgba(246,154,190,.12));
+  }
+
+  .day-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: clamp(2rem, 8vw, 7rem);
+  }
+
+  .day-grid h2 {
+    max-width: 11ch;
+  }
+
+  .day-notes {
+    max-width: 40rem;
+  }
+
+  .day-notes .button {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 780px) {
+    .hero-grid,
+    .day-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .type-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .type-grid article:nth-child(2) {
+      border-right: 0;
+    }
+
+    .type-grid article:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--line);
+    }
+  }
+</style>

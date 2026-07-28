@@ -1,0 +1,601 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TreatIcon from "../components/TreatIcon.astro";
+import { events, site, treats } from "../data/content";
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="site-shell hero-grid">
+      <div class="hero-copy">
+        <p class="hero-location">Troy, New York</p>
+        <h1>Something sweet for the moment you are celebrating.</h1>
+        <p class="lede">Cookies, brownies, dessert trays, gift bags, and seasonal treats made by Misty for parties, holidays, market days, or an ordinary craving.</p>
+        <div class="button-row">
+          <a class="button" href="/custom-orders">Request a custom order</a>
+          <a class="button button-secondary" href="/treats">Explore the treats</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Rare Treats 518 pastel heart brand artwork">
+        <div class="spark spark-one">✦</div>
+        <div class="spark spark-two">✧</div>
+        <svg class="hero-heart" viewBox="0 0 470 440" role="img" aria-labelledby="heart-title">
+          <title id="heart-title">Rare Treats 518</title>
+          <defs>
+            <linearGradient id="hero-gradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#75d5d0"></stop>
+              <stop offset="0.38" stop-color="#fffaf5"></stop>
+              <stop offset="0.7" stop-color="#f69abe"></stop>
+              <stop offset="1" stop-color="#b79be8"></stop>
+            </linearGradient>
+            <filter id="heart-shadow" x="-20%" y="-20%" width="140%" height="150%">
+              <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#4c3460" flood-opacity=".2"></feDropShadow>
+            </filter>
+          </defs>
+          <path d="M235 419 48 236C-48 142 5 20 109 20c57 0 98 34 126 81 28-47 69-81 126-81 104 0 157 122 61 216Z" fill="url(#hero-gradient)" stroke="#271b45" stroke-width="7" filter="url(#heart-shadow)"></path>
+          <path d="M84 241c58 43 102 78 151 137 49-59 93-94 151-137" fill="none" stroke="rgba(255,255,255,.68)" stroke-width="8" stroke-linecap="round"></path>
+        </svg>
+        <div class="heart-words">
+          <span>Rare</span>
+          <span>Treats 518</span>
+          <small>Homemade with love</small>
+        </div>
+        <div class="floating-note note-cookie"><strong>Cookies</strong><span>Rotating flavors</span></div>
+        <div class="floating-note note-seasonal"><strong>Seasonal</strong><span>Limited favorites</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section treats-intro">
+    <div class="site-shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">From the Rare Treats table</p>
+          <h2>Favorites that change with the season.</h2>
+        </div>
+        <p>The menu is intentionally flexible. Start with the category that fits your occasion, then message Misty about the date, quantity, and flavors you have in mind.</p>
+      </div>
+      <div class="treat-rail">
+        {treats.categories.map((category, index) => (
+          <article class:list={["treat-card", `tone-${index + 1}`]}>
+            <TreatIcon icon={category.icon} />
+            <h3>{category.name}</h3>
+            <p>{category.shortDescription}</p>
+            <a href={`/treats#${category.slug}`}>See the details</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section order-section">
+    <div class="site-shell order-panel soft-panel">
+      <div class="order-title">
+        <p class="eyebrow">Custom orders</p>
+        <h2>Tell Misty what would make the occasion feel complete.</h2>
+        <p>Every order starts as a conversation, so nothing is promised before the date, quantity, flavors, and pickup or delivery details are confirmed.</p>
+        <a class="inline-link" href="/custom-orders">What to include in your message →</a>
+      </div>
+      <ol class="steps">
+        <li><span>01</span><div><h3>Share the idea</h3><p>Occasion, preferred date, guest count, and the treats you are considering.</p></div></li>
+        <li><span>02</span><div><h3>Confirm the details</h3><p>Misty reviews availability, options, final pricing, payment, and handoff details.</p></div></li>
+        <li><span>03</span><div><h3>Enjoy the treats</h3><p>Your accepted order is prepared for the date and arrangement you confirmed together.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section market-section">
+    <div class="site-shell market-grid">
+      <div class="market-art" aria-hidden="true">
+        <div class="awning"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="market-table">
+          <div class="jar jar-one"></div><div class="jar jar-two"></div><div class="tray"></div><div class="bag"></div>
+        </div>
+        <div class="market-sign">Rare Treats 518</div>
+      </div>
+      <div class="market-copy">
+        <p class="eyebrow">Markets & pop-ups</p>
+        <h2>Find the table, meet Misty, and see what is fresh that day.</h2>
+        <p class="lede">{events.announcement}</p>
+        <div class="button-row">
+          <a class="button" href={site.social.instagram} target="_blank" rel="noreferrer">Follow on Instagram</a>
+          <a class="button button-secondary" href="/markets">About market days</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section founder-section">
+    <div class="site-shell founder-grid">
+      <div>
+        <p class="eyebrow">Made in Troy</p>
+        <h2>A local business built around the joy of sharing food.</h2>
+      </div>
+      <div>
+        <p class="lede">Rare Treats 518 is owned by Misty Bensalah. The brand brings homemade desserts to custom orders, community events, and local markets across the Capital Region.</p>
+        <a class="inline-link" href="/about">Meet Misty and read the story →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="site-shell final-card">
+      <p class="eyebrow">Start with a message</p>
+      <h2>Have a date, celebration, or treat idea in mind?</h2>
+      <p>Send Misty the basics and she can let you know what is possible.</p>
+      <a class="button" href="/custom-orders">Plan a custom order</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(3.5rem, 7vw, 7.5rem);
+  }
+
+  .hero-grid {
+    display: grid;
+    min-height: 40rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .hero-location {
+    margin-bottom: 1.2rem;
+    color: var(--blush-deep);
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    max-width: 11ch;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero .lede {
+    margin-bottom: 2rem;
+  }
+
+  .hero-art {
+    position: relative;
+    min-height: 37rem;
+  }
+
+  .hero-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(100%, 31rem);
+    transform: translate(-50%, -50%) rotate(-2deg);
+  }
+
+  .heart-words {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    display: grid;
+    color: var(--blueberry);
+    text-align: center;
+    transform: translate(-50%, -50%) rotate(-2deg);
+  }
+
+  .heart-words span {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.8rem);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 0.92;
+    white-space: nowrap;
+  }
+
+  .heart-words small {
+    margin-top: 1rem;
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .floating-note {
+    position: absolute;
+    display: grid;
+    min-width: 9.5rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(39, 27, 69, 0.12);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 18px 40px rgba(39, 27, 69, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  .floating-note strong {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+  }
+
+  .floating-note span {
+    color: var(--blueberry-soft);
+    font-size: 0.74rem;
+  }
+
+  .note-cookie {
+    top: 8%;
+    left: 0;
+    transform: rotate(-5deg);
+  }
+
+  .note-seasonal {
+    right: -2%;
+    bottom: 9%;
+    transform: rotate(4deg);
+  }
+
+  .spark {
+    position: absolute;
+    z-index: 1;
+    color: var(--blush-deep);
+    font-size: 2rem;
+  }
+
+  .spark-one {
+    top: 13%;
+    right: 9%;
+  }
+
+  .spark-two {
+    bottom: 18%;
+    left: 10%;
+    color: var(--aqua-deep);
+  }
+
+  .treats-intro {
+    background: rgba(255, 255, 255, 0.58);
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+
+  .section-heading h2 {
+    max-width: 11ch;
+    margin-bottom: 0;
+  }
+
+  .section-heading > p {
+    max-width: 34rem;
+    margin-bottom: 0;
+  }
+
+  .treat-rail {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(12.5rem, 1fr));
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.25rem 0.25rem 1.5rem;
+    scrollbar-color: rgba(39, 27, 69, 0.25) transparent;
+  }
+
+  .treat-card {
+    min-height: 19rem;
+    padding: 1.35rem;
+    border: 1px solid rgba(39, 27, 69, 0.1);
+    border-radius: var(--radius-md);
+    background: rgba(255, 250, 245, 0.9);
+  }
+
+  .treat-card:nth-child(2n) {
+    transform: translateY(1.1rem);
+  }
+
+  .treat-card h3 {
+    margin: 2.4rem 0 0.75rem;
+  }
+
+  .treat-card p {
+    min-height: 4.8rem;
+    font-size: 0.92rem;
+  }
+
+  .treat-card a {
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .tone-1 { background: linear-gradient(160deg, rgba(117,213,208,.22), rgba(255,255,255,.9)); }
+  .tone-2 { background: linear-gradient(160deg, rgba(255,212,189,.32), rgba(255,255,255,.9)); }
+  .tone-3 { background: linear-gradient(160deg, rgba(183,155,232,.22), rgba(255,255,255,.9)); }
+  .tone-4 { background: linear-gradient(160deg, rgba(246,154,190,.22), rgba(255,255,255,.9)); }
+  .tone-5 { background: linear-gradient(160deg, rgba(248,217,135,.28), rgba(255,255,255,.9)); }
+  .tone-6 { background: linear-gradient(160deg, rgba(117,213,208,.18), rgba(246,154,190,.14), rgba(255,255,255,.9)); }
+
+  .order-panel {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(2rem, 6vw, 5.5rem);
+    padding: clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .order-title h2 {
+    max-width: 11ch;
+  }
+
+  .steps {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .steps li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.2rem;
+    padding-block: 1.35rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .steps li:first-child {
+    padding-top: 0;
+  }
+
+  .steps li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .steps span {
+    color: var(--blush-deep);
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+  }
+
+  .steps h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .steps p {
+    margin-bottom: 0;
+  }
+
+  .market-section {
+    background: var(--blueberry);
+    color: white;
+  }
+
+  .market-section p {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .market-section .eyebrow {
+    color: var(--aqua);
+  }
+
+  .market-section .button {
+    border-color: white;
+    background: white;
+    color: var(--blueberry);
+  }
+
+  .market-section .button-secondary {
+    background: transparent;
+    color: white;
+  }
+
+  .market-grid {
+    display: grid;
+    grid-template-columns: minmax(22rem, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(3rem, 8vw, 7rem);
+    align-items: center;
+  }
+
+  .market-copy h2 {
+    max-width: 12ch;
+  }
+
+  .market-art {
+    position: relative;
+    min-height: 26rem;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 2rem;
+    background: linear-gradient(180deg, rgba(117,213,208,.2), rgba(246,154,190,.12));
+  }
+
+  .awning {
+    display: grid;
+    height: 7.5rem;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .awning span:nth-child(odd) { background: var(--aqua); }
+  .awning span:nth-child(even) { background: var(--cream); }
+  .awning span { border-radius: 0 0 1.2rem 1.2rem; }
+
+  .market-table {
+    position: absolute;
+    right: 7%;
+    bottom: 3.5rem;
+    left: 7%;
+    height: 7.5rem;
+    border-radius: 0.8rem 0.8rem 0.2rem 0.2rem;
+    background: var(--cream);
+    box-shadow: inset 0 -1rem 0 rgba(246,154,190,.24);
+  }
+
+  .market-sign {
+    position: absolute;
+    top: 8.8rem;
+    left: 50%;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: var(--blush);
+    color: var(--blueberry);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-style: italic;
+    transform: translateX(-50%) rotate(-2deg);
+  }
+
+  .jar, .tray, .bag {
+    position: absolute;
+    bottom: 6.3rem;
+    border: 2px solid rgba(39,27,69,.4);
+    background: rgba(248,217,135,.85);
+  }
+
+  .jar { width: 3.6rem; height: 5.8rem; border-radius: .4rem  .4rem .8rem .8rem; }
+  .jar-one { left: 8%; }
+  .jar-two { left: 22%; height: 4.9rem; background: rgba(246,154,190,.8); }
+  .tray { left: 40%; width: 10rem; height: 3.2rem; border-radius: 50%; background: rgba(255,212,189,.9); }
+  .bag { right: 8%; width: 5rem; height: 7rem; border-radius: .5rem; background: rgba(117,213,208,.8); transform: rotate(3deg); }
+
+  .founder-section {
+    background: linear-gradient(90deg, rgba(117, 213, 208, 0.16), rgba(246, 154, 190, 0.14));
+  }
+
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 8vw, 7rem);
+    align-items: end;
+  }
+
+  .founder-grid h2 {
+    max-width: 12ch;
+    margin-bottom: 0;
+  }
+
+  .final-cta {
+    text-align: center;
+  }
+
+  .final-card {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3.2rem, 8vw, 6.5rem) 1.5rem;
+    border-radius: 2.3rem;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+
+  .final-card::before,
+  .final-card::after {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    content: "";
+    filter: blur(1px);
+    opacity: 0.55;
+  }
+
+  .final-card::before {
+    top: -8rem;
+    left: -5rem;
+    background: var(--aqua);
+  }
+
+  .final-card::after {
+    right: -5rem;
+    bottom: -8rem;
+    background: var(--blush);
+  }
+
+  .final-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .final-card h2 {
+    max-width: 17ch;
+    margin-inline: auto;
+  }
+
+  .final-card p:not(.eyebrow) {
+    margin-bottom: 1.7rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .order-panel,
+    .market-grid,
+    .founder-grid,
+    .section-heading {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+      min-height: 0;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-art {
+      min-height: 31rem;
+    }
+
+    .section-heading {
+      gap: 1rem;
+    }
+
+    .treat-rail {
+      grid-template-columns: repeat(6, minmax(15rem, 1fr));
+    }
+
+    .market-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .market-copy {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .hero {
+      padding-top: 3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.15rem, 17vw, 4.6rem);
+    }
+
+    .hero-art {
+      min-height: 25rem;
+    }
+
+    .floating-note {
+      min-width: 8.3rem;
+      padding: 0.75rem 0.85rem;
+    }
+
+    .note-cookie { left: -0.5rem; }
+    .note-seasonal { right: -0.5rem; }
+
+    .heart-words span {
+      font-size: 2.35rem;
+    }
+
+    .order-panel {
+      padding: 1.4rem;
+      border-radius: 1.4rem;
+    }
+
+    .market-art {
+      min-height: 21rem;
+    }
+
+    .tray { width: 7.5rem; }
+  }
+</style>

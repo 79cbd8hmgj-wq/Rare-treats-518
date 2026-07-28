@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { policies } from "../data/content";
+
+const faqs = [
+  { question: "How do I request an order?", answer: "Send Rare Treats 518 a direct message on Instagram with the occasion, preferred date, estimated quantity, treat ideas, and any ingredient questions. The order is not confirmed until Misty replies and finalizes the details." },
+  { question: "Is there a permanent menu?", answer: "Not yet. The selection rotates by season, event, and availability. The Treats page shows the main categories without promising that every item is available every day." },
+  { question: "How much notice should I give?", answer: "Lead time is confirmed individually because the right amount of notice depends on the date, quantity, and type of order. Sending a request early gives Misty more room to review it." },
+  { question: "Can Rare Treats accommodate allergies or dietary needs?", answer: policies.allergenNotice },
+  { question: "How do payment and deposits work?", answer: policies.payment },
+  { question: "Where do I pick up my order?", answer: policies.pickupAndDelivery },
+  { question: "What happens if I need to change or cancel?", answer: policies.changesAndCancellations },
+  { question: "Does Rare Treats ship?", answer: policies.shipping }
+];
+---
+
+<BaseLayout title="Frequently Asked Questions" description="Answers about Rare Treats 518 ordering, availability, payment, pickup, ingredients, and policies.">
+  <section class="page-hero">
+    <div class="site-shell">
+      <p class="eyebrow">Frequently asked questions</p>
+      <h1>What to know before you order.</h1>
+      <p class="lede">The website avoids guessing about business rules that Misty has not approved. These answers describe the current inquiry-first process and clearly identify details that are confirmed per order.</p>
+    </div>
+  </section>
+
+  <section class="section-tight faq-section">
+    <div class="site-shell faq-list">
+      {faqs.map((faq, index) => (
+        <details open={index === 0}>
+          <summary><span>0{index + 1}</span><strong>{faq.question}</strong><i>+</i></summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="section faq-cta">
+    <div class="site-shell cta-grid">
+      <div><p class="eyebrow">Still deciding?</p><h2>Review the treat categories, then send Misty the idea.</h2></div>
+      <div class="button-row"><a class="button" href="/treats">Explore treats</a><a class="button button-secondary" href="/custom-orders">Custom-order steps</a></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .faq-section {
+    background: rgba(255,255,255,.58);
+  }
+
+  .faq-list {
+    max-width: 920px;
+  }
+
+  details {
+    border-top: 1px solid var(--line);
+  }
+
+  details:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  summary {
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding-block: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary span {
+    color: var(--blush-deep);
+    font-size: .72rem;
+    font-weight: 850;
+  }
+
+  summary strong {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 2rem);
+  }
+
+  summary i {
+    font-size: 1.6rem;
+    font-style: normal;
+    transition: transform 180ms ease;
+  }
+
+  details[open] summary i {
+    transform: rotate(45deg);
+  }
+
+  details p {
+    max-width: 48rem;
+    margin: 0 0 1.7rem 4rem;
+  }
+
+  .faq-cta {
+    background: linear-gradient(90deg, rgba(117,213,208,.16), rgba(246,154,190,.13));
+  }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .cta-grid h2 {
+    max-width: 15ch;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 720px) {
+    summary {
+      grid-template-columns: 2rem 1fr auto;
+    }
+
+    details p {
+      margin-left: 3rem;
+    }
+
+    .cta-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

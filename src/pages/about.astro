@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/content";
+---
+
+<BaseLayout title="About" description="Meet Misty Bensalah, owner of Rare Treats 518 in Troy, New York.">
+  <section class="page-hero about-hero">
+    <div class="site-shell hero-grid">
+      <div>
+        <p class="eyebrow">About Rare Treats 518</p>
+        <h1>Made by Misty. Shared across the community.</h1>
+        <p class="lede">Rare Treats 518 is an owner-led Troy business centered on homemade desserts, custom requests, and the energy of local markets and events.</p>
+      </div>
+      <div class="portrait-space" aria-label="Reserved space for an approved portrait of Misty">
+        <div class="portrait-heart">♡</div>
+        <span>Made by Misty in Troy, New York</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section story-section">
+    <div class="site-shell story-grid">
+      <div class="story-title">
+        <p class="eyebrow">A local, owner-led business</p>
+        <h2>Homemade with love. Made for you.</h2>
+      </div>
+      <div class="story-copy">
+        <p class="lede">Misty Bensalah owns Rare Treats 518 LLC and brings the business to Troy-area markets, community events, and direct customer orders.</p>
+        <p>The brand is built around a rotating dessert selection, a recognizable pastel-heart identity, and making each order feel personal.</p>
+        <p>Whether someone finds the table at a community event or reaches out about a celebration, Rare Treats is meant to feel warm, approachable, and unmistakably local.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section values-section">
+    <div class="site-shell values-grid">
+      <article><span>01</span><h2>Made fresh</h2><p>The brand presents its treats as homemade and prepared with care.</p></article>
+      <article><span>02</span><h2>Made personal</h2><p>Custom orders begin with a direct conversation instead of a rigid online catalog.</p></article>
+      <article><span>03</span><h2>Made local</h2><p>Rare Treats 518 is proudly rooted in Troy and the greater Capital Region.</p></article>
+    </div>
+  </section>
+
+  <section class="section about-cta">
+    <div class="site-shell cta-grid soft-panel">
+      <div><p class="eyebrow">See what Misty is making</p><h2>Follow the newest treats and market dates.</h2></div>
+      <a class="button" href={site.social.instagram} target="_blank" rel="noreferrer">Visit Instagram</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .75fr;
+    gap: clamp(2rem, 8vw, 7rem);
+    align-items: center;
+  }
+
+  .portrait-space {
+    display: grid;
+    min-height: 28rem;
+    place-items: center;
+    align-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    border: 1px solid var(--line);
+    border-radius: 48% 48% 2rem 2rem;
+    background: linear-gradient(145deg, rgba(117,213,208,.28), rgba(255,250,245,.7), rgba(246,154,190,.28));
+    color: var(--blueberry-soft);
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .portrait-heart {
+    font-family: var(--font-display);
+    font-size: 7rem;
+    line-height: 1;
+  }
+
+  .portrait-space span {
+    max-width: 16rem;
+    font-size: .78rem;
+    font-weight: 750;
+  }
+
+  .story-section {
+    background: rgba(255,255,255,.6);
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: clamp(2rem, 9vw, 8rem);
+  }
+
+  .story-title h2 {
+    max-width: 10ch;
+  }
+
+  .story-copy {
+    max-width: 42rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .values-grid article {
+    min-height: 18rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border-right: 1px solid var(--line);
+  }
+
+  .values-grid article:last-child {
+    border-right: 0;
+  }
+
+  .values-grid span {
+    color: var(--blush-deep);
+    font-size: .72rem;
+    font-weight: 850;
+  }
+
+  .values-grid h2 {
+    margin: 4.5rem 0 .8rem;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+  }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    padding: clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .cta-grid h2 {
+    max-width: 15ch;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 780px) {
+    .hero-grid,
+    .story-grid,
+    .cta-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .portrait-space {
+      min-height: 22rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .values-grid article {
+      min-height: 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .values-grid article:last-child {
+      border-bottom: 0;
+    }
+
+    .values-grid h2 {
+      margin-top: 2rem;
+    }
+  }
+</style>

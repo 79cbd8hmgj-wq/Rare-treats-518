@@ -1,0 +1,235 @@
+:root {
+  --cream: #fffaf5;
+  --cream-deep: #f8efe8;
+  --paper: #ffffff;
+  --blueberry: #271b45;
+  --blueberry-soft: #5a4f6f;
+  --aqua: #75d5d0;
+  --aqua-deep: #168f91;
+  --blush: #f69abe;
+  --blush-deep: #d84d88;
+  --lavender: #b79be8;
+  --peach: #ffd4bd;
+  --yellow: #f8d987;
+  --line: rgba(39, 27, 69, 0.14);
+  --shadow: 0 24px 70px rgba(76, 52, 96, 0.12);
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 2rem;
+  --font-body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --site-width: min(1180px, calc(100vw - 2rem));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--cream);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--blueberry);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(117, 213, 208, 0.16), transparent 28rem),
+    radial-gradient(circle at 94% 16%, rgba(246, 154, 190, 0.14), transparent 26rem),
+    var(--cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  font-size: clamp(3.15rem, 9vw, 6.85rem);
+}
+
+h2 {
+  font-size: clamp(2.15rem, 5vw, 4.2rem);
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+}
+
+p {
+  color: var(--blueberry-soft);
+}
+
+main {
+  overflow: hidden;
+}
+
+.site-shell {
+  width: var(--site-width);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+}
+
+.section-tight {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--aqua-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lede {
+  max-width: 43rem;
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid var(--blueberry);
+  border-radius: 999px;
+  background: var(--blueberry);
+  color: white;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(39, 27, 69, 0.18);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--blueberry);
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.inline-link {
+  color: var(--blueberry);
+  font-weight: 800;
+}
+
+.soft-panel {
+  border: 1px solid rgba(39, 27, 69, 0.1);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.page-hero {
+  padding-block: clamp(4rem, 10vw, 8rem) clamp(3.5rem, 8vw, 6rem);
+}
+
+.page-hero h1 {
+  max-width: 13ch;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero .lede {
+  margin-bottom: 0;
+}
+
+.notice {
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(216, 77, 136, 0.22);
+  border-radius: 1rem;
+  background: rgba(246, 154, 190, 0.12);
+  color: var(--blueberry-soft);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --site-width: min(100% - 1.25rem, 1180px);
+  }
+
+  body {
+    line-height: 1.58;
+  }
+
+  .section {
+    padding-block: 4rem;
+  }
+
+  .button-row {
+    align-items: stretch;
+  }
+
+  .button {
+    flex: 1 1 12rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
