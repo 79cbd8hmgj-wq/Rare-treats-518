@@ -16,8 +16,16 @@ assert.deepEqual(
 
 assert.deepEqual(
   findVoiceViolations(
+    "Pick a favorite—or ask what is new.",
+    ["—", "–"]
+  ),
+  ["—"]
+);
+
+assert.deepEqual(
+  findVoiceViolations(
     "I make cookies, brownies, and seasonal treats in Troy.",
-    ["intentionally flexible", "built around"]
+    ["intentionally flexible", "built around", "—", "–"]
   ),
   []
 );
