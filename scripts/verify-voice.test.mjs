@@ -24,7 +24,7 @@ assert.deepEqual(
 
 assert.deepEqual(
   findVoiceViolations(
-    "I make cookies, brownies, and seasonal treats in Troy.",
+    "I make cookies, brownies, and seasonal treats in Troy, New York.",
     ["intentionally flexible", "built around", "—", "–"]
   ),
   []
