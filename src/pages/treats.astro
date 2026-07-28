@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TreatCard from '../components/TreatCard.astro';
+import { site, treatCategories } from '../data/site';
+---
+
+<BaseLayout title="Treats" description="Explore the current treat categories from Rare Treats 518.">
+  <section class="page-hero compact-hero">
+    <div class="shell narrow">
+      <h1>Treats made for markets, gifts, and celebrations.</h1>
+      <p>
+        This is the working treat guide—not a live menu. Exact flavors, quantities, and prices will be added
+        after Misty confirms current offerings.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell treat-grid">
+      {treatCategories.map((category, index) => <TreatCard {...category} index={index} />)}
+    </div>
+  </section>
+  <section class="section soft-band">
+    <div class="shell centered narrow">
+      <h2>Looking for something specific?</h2>
+      <p>Custom requests are handled through conversation so availability and details can be confirmed first.</p>
+      <a class="button" href="/custom-orders">Request a custom order</a>
+    </div>
+  </section>
+</BaseLayout>

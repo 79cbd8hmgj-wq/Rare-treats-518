@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="FAQ & Policies" description="Working order and policy information for Rare Treats 518." noindex={site.policies.status !== 'approved'}>
+  <section class="page-hero compact-hero">
+    <div class="shell narrow">
+      <h1>Order information and policies.</h1>
+      <p>These are preview notes. Final public policies require Misty’s review and approval.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell faq-list">
+      <article><h2>Can I order directly on the website?</h2><p>Not yet. Current requests begin through Instagram so availability and details can be confirmed.</p></article>
+      <article><h2>Are market menus always the same?</h2><p>No. Products and quantities can change by event, season, and availability.</p></article>
+      <article><h2>How are allergens handled?</h2><p>{site.policies.allergenNotice}</p></article>
+      <article><h2>When is a custom order confirmed?</h2><p>{site.policies.orderNotice}</p></article>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Custom Orders" description="Learn how to request custom treats from Rare Treats 518.">
+  <section class="page-hero">
+    <div class="shell page-hero-grid">
+      <div>
+        <h1>Tell Misty what you are celebrating.</h1>
+        <p>{site.customOrders.intro}</p>
+        <a class="button" href={site.customOrders.requestUrl} target="_blank" rel="noreferrer">Message on Instagram</a>
+      </div>
+      <div class="request-note">
+        <strong>Custom ordering is inquiry-first.</strong>
+        <p>No payment or order is accepted through this website yet.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell steps-grid">
+      <article><span>1</span><h2>Share the basics</h2><p>Send the date, occasion, quantity, and treat idea.</p></article>
+      <article><span>2</span><h2>Confirm the details</h2><p>Misty confirms availability, flavors, price, timing, and handoff details.</p></article>
+      <article><span>3</span><h2>Approve the order</h2><p>The order becomes official only after Misty confirms the final arrangement.</p></article>
+    </div>
+  </section>
+  <section class="section soft-band">
+    <div class="shell detail-list-grid">
+      <div><p class="section-label">Helpful information</p><h2>Include these details in the first message.</h2></div>
+      <ul class="check-list">
+        {site.customOrders.requiredDetails.map((detail) => <li>{detail}</li>)}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

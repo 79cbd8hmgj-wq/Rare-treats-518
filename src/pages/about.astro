@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="About" description="Meet Misty and learn about Rare Treats 518.">
+  <section class="page-hero about-hero">
+    <div class="shell owner-grid">
+      <div class="owner-photo-slot large"><span>Publication-approved portrait needed</span></div>
+      <div>
+        <p class="section-label">Rare Treats 518</p>
+        <h1>Homemade sweets from an owner-led Troy business.</h1>
+        <p>
+          Misty Bensalah creates homemade treats for local markets, gifts, and celebrations. This page is
+          intentionally brief until Misty approves her complete story, business background, and preferred wording.
+        </p>
+        <a class="button" href={site.business.instagramUrl} target="_blank" rel="noreferrer">Follow @{site.business.instagramHandle}</a>
+      </div>
+    </div>
+  </section>
+  <section class="section values-row">
+    <div class="shell values-grid">
+      <article><h2>Homemade</h2><p>Small-business treats prepared with personal attention.</p></article>
+      <article><h2>Local</h2><p>Based in Troy and connected to Capital Region markets and events.</p></article>
+      <article><h2>Personal</h2><p>Custom requests begin with a real conversation—not an anonymous checkout screen.</p></article>
+    </div>
+  </section>
+</BaseLayout>

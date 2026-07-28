@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Markets & Events" description="Find Rare Treats 518 at local markets and community events.">
+  <section class="page-hero compact-hero">
+    <div class="shell narrow">
+      <h1>See what is on the table in person.</h1>
+      <p>{site.markets.intro}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell market-empty-state">
+      <div class="calendar-icon" aria-hidden="true">♥</div>
+      <div>
+        <h2>Upcoming dates are being confirmed.</h2>
+        <p>The event list will appear here once Misty approves the current schedule and venue details.</p>
+        <a class="button" href={site.markets.updatesUrl} target="_blank" rel="noreferrer">Check Instagram</a>
+      </div>
+    </div>
+  </section>
+  <section class="section soft-band">
+    <div class="shell split-heading">
+      <div><p class="section-label">At the table</p><h2>Expect a rotating selection.</h2></div>
+      <p>Market availability changes from event to event. Current menu boards and sold-out notices are shared through social media.</p>
+    </div>
+  </section>
+</BaseLayout>
