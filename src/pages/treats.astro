@@ -7,8 +7,8 @@ import { treats } from "../data/content";
 <BaseLayout title="Treats" description="Explore the rotating homemade dessert categories available from Rare Treats 518.">
   <section class="page-hero">
     <div class="site-shell">
-      <p class="eyebrow">The treat table</p>
-      <h1>A menu built to rotate.</h1>
+      <p class="eyebrow">What I make</p>
+      <h1>Pick a favorite or ask what’s new.</h1>
       <p class="lede">{treats.intro}</p>
     </div>
   </section>
@@ -17,14 +17,17 @@ import { treats } from "../data/content";
     <div class="site-shell catalog">
       {treats.categories.map((category, index) => (
         <article id={category.slug} class="catalog-row">
-          <div class:list={["number", `tone-${(index % 3) + 1}`]}><span>0{index + 1}</span><TreatIcon icon={category.icon} /></div>
-          <div>
+          <div class:list={["catalog-mark", `tone-${(index % 3) + 1}`]}>
+            <span class="catalog-number">0{index + 1}</span>
+            <TreatIcon icon={category.icon} />
+          </div>
+          <div class="catalog-copy">
             <h2>{category.name}</h2>
             <p class="lede">{category.longDescription}</p>
           </div>
           <div class="availability">
             <span>{category.availability.replace("-", " ")}</span>
-            <a href="/custom-orders">Ask about this category →</a>
+            <a href="/custom-orders">Ask about it →</a>
           </div>
         </article>
       ))}
@@ -34,12 +37,12 @@ import { treats } from "../data/content";
   <section class="section seasonal-band">
     <div class="site-shell seasonal-grid">
       <div>
-        <p class="eyebrow">Limited by design</p>
-        <h2>Seasonal treats do not stay forever.</h2>
+        <p class="eyebrow">Seasonal treats</p>
+        <h2>Some favorites only show up for a little while.</h2>
       </div>
       <div>
-        <p class="lede">Holiday boxes, themed gift bags, limited flavors, and market-day specials are announced when they are ready. Instagram is the best place to see what is current.</p>
-        <a class="button" href="https://www.instagram.com/raretreats518/" target="_blank" rel="noreferrer">See current updates</a>
+        <p class="lede">I share holiday boxes, themed gift bags, limited flavors, and market specials on Instagram when they’re ready.</p>
+        <a class="button" href="https://www.instagram.com/raretreats518/" target="_blank" rel="noreferrer">See what’s new</a>
       </div>
     </div>
   </section>
@@ -59,21 +62,26 @@ import { treats } from "../data/content";
     border-bottom: 1px solid var(--line);
   }
 
-  .number {
-    display: flex;
+  .catalog-mark {
+    display: grid;
     min-height: 7.5rem;
-    align-items: center;
-    justify-content: space-between;
+    grid-template-columns: 1.15rem 1fr;
     gap: 0.6rem;
+    align-items: start;
     padding: 0.8rem;
     border-radius: 1.4rem;
   }
 
-  .number > span {
-    align-self: flex-start;
+  .catalog-number {
     color: var(--blueberry-soft);
     font-size: 0.72rem;
     font-weight: 850;
+    line-height: 1;
+  }
+
+  .catalog-mark :global(.icon) {
+    align-self: center;
+    justify-self: center;
   }
 
   .tone-1 { background: rgba(117, 213, 208, 0.22); }
@@ -148,7 +156,7 @@ import { treats } from "../data/content";
       grid-template-columns: 1fr;
     }
 
-    .number {
+    .catalog-mark {
       max-width: 8rem;
     }
   }

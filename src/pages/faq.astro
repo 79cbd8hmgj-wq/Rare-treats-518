@@ -3,9 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { policies } from "../data/content";
 
 const faqs = [
-  { question: "How do I request an order?", answer: "Send Rare Treats 518 a direct message on Instagram with the occasion, preferred date, estimated quantity, treat ideas, and any ingredient questions. Your order is confirmed after Misty replies and finalizes the details with you." },
-  { question: "Is there a permanent menu?", answer: "The selection changes with the season, the event, and current availability. The Treats page shows the main categories, while Instagram is the best place to see what Misty is making now." },
-  { question: "How much notice should I give?", answer: "Lead time depends on the date, quantity, and type of order. Sending your request early gives Misty the best chance to review the idea and confirm availability." },
+  { question: "How do I request an order?", answer: "Send a message on Instagram with the date, the occasion, how many people you’re ordering for, and what treats you have in mind. Misty will reply with availability and pricing." },
+  { question: "Is there a permanent menu?", answer: "No. Flavors and seasonal treats change, so the Treats page shows the main categories and Instagram shows what’s current." },
+  { question: "How much notice should I give?", answer: "Send your request as early as you can. The amount of time needed depends on the date, quantity, and treats." },
   { question: "Can Rare Treats accommodate allergies or dietary needs?", answer: policies.allergenNotice },
   { question: "How do payment and deposits work?", answer: policies.payment },
   { question: "Where do I pick up my order?", answer: policies.pickupAndDelivery },
@@ -18,8 +18,8 @@ const faqs = [
   <section class="page-hero">
     <div class="site-shell">
       <p class="eyebrow">Frequently asked questions</p>
-      <h1>What to know before you order.</h1>
-      <p class="lede">Start here for the basics about ordering, availability, payment, pickup, ingredients, and changes. Misty confirms the details that depend on your specific request.</p>
+      <h1>A few things to know before you order.</h1>
+      <p class="lede">Here are the basics. Anything that depends on your date or order will be worked out with Misty before you pay.</p>
     </div>
   </section>
 
@@ -36,7 +36,7 @@ const faqs = [
 
   <section class="section faq-cta">
     <div class="site-shell cta-grid">
-      <div><p class="eyebrow">Still deciding?</p><h2>Review the treat categories, then send Misty the idea.</h2></div>
+      <div><p class="eyebrow">Still deciding?</p><h2>See what I make, then send me your idea.</h2></div>
       <div class="button-row"><a class="button" href="/treats">Explore treats</a><a class="button button-secondary" href="/custom-orders">Custom-order steps</a></div>
     </div>
   </section>

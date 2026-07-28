@@ -1,8 +1,8 @@
 {
   "approved": false,
-  "allergenNotice": "Ask about ingredients and allergens before ordering. Rare Treats 518 cannot promise an accommodation until Misty has reviewed the request directly.",
-  "payment": "Accepted payment methods and deposit requirements are confirmed directly for each order.",
-  "changesAndCancellations": "Change, cancellation, and refund terms are confirmed before payment until a final public policy is approved.",
-  "pickupAndDelivery": "Pickup and delivery availability, location, timing, and any related fee are confirmed per order.",
-  "shipping": "Rare Treats 518 does not currently advertise shipping. Pickup or delivery details are confirmed directly for accepted local orders."
+  "allergenNotice": "Please ask about ingredients and allergens before ordering. An allergy or dietary request is not accepted until Misty has reviewed it.",
+  "payment": "Misty confirms the total, payment method, and any deposit before accepting the order.",
+  "changesAndCancellations": "Cancellation, change, and refund terms are explained before payment.",
+  "pickupAndDelivery": "Pickup or delivery details, timing, location, and any fee are arranged for each order.",
+  "shipping": "Shipping is not currently offered. Accepted orders use an arranged pickup or local delivery."
 }
