@@ -1,0 +1,130 @@
+---
+import BrandMark from "./BrandMark.astro";
+import { navigation, site } from "../data/content";
+---
+
+<footer class="site-footer">
+  <div class="site-shell footer-grid">
+    <div class="footer-brand">
+      <BrandMark />
+      <p>Homemade desserts, custom orders, and local market favorites from Troy, New York.</p>
+    </div>
+    <div>
+      <h2>Explore</h2>
+      <nav aria-label="Footer navigation">
+        {navigation.slice(0, 3).map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+    </div>
+    <div>
+      <h2>Learn more</h2>
+      <nav aria-label="More information">
+        {navigation.slice(3).map((item) => <a href={item.href}>{item.label}</a>)}
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+    <div>
+      <h2>Follow along</h2>
+      <a class="social" href={site.social.instagram} target="_blank" rel="noreferrer">Instagram · @raretreats518</a>
+      <p class="small">New treat drops and market dates are announced there first.</p>
+    </div>
+  </div>
+  <div class="site-shell footer-bottom">
+    <span>© {new Date().getFullYear()} Rare Treats 518 LLC</span>
+    <span>Based in Troy, NY</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding-top: clamp(4rem, 8vw, 6rem);
+    background: var(--blueberry);
+    color: white;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(3, 1fr);
+    gap: 2.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .footer-brand :global(.brand-mark),
+  .footer-brand :global(.brand-mark strong),
+  .footer-brand :global(.brand-mark small) {
+    color: white;
+  }
+
+  p,
+  a {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .footer-brand p {
+    max-width: 27rem;
+    margin-top: 1.2rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  nav a,
+  .social {
+    font-size: 0.93rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  .small {
+    margin-top: 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.76rem;
+  }
+
+  @media (max-width: 860px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .footer-grid {
+      gap: 2rem 1rem;
+    }
+
+    .footer-grid > div:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,53 @@
+{
+  "intro": "The menu changes with the season, the event, and what Misty is baking next. These categories show the kinds of treats Rare Treats 518 is known for without promising a fixed daily inventory.",
+  "categories": [
+    {
+      "slug": "cookies",
+      "name": "Cookies",
+      "shortDescription": "Soft, chewy, and packed with flavor.",
+      "longDescription": "Classic favorites, rotating flavors, decorated options, and market-ready treat bags.",
+      "icon": "cookie",
+      "availability": "rotating"
+    },
+    {
+      "slug": "brownies-bars",
+      "name": "Brownies & bars",
+      "shortDescription": "Rich, fudgy, and made for sharing.",
+      "longDescription": "Brownies, blondies, layered bars, and seasonal variations sold individually or arranged for a group.",
+      "icon": "brownie",
+      "availability": "rotating"
+    },
+    {
+      "slug": "dessert-trays",
+      "name": "Dessert trays",
+      "shortDescription": "A mixed spread for parties and gatherings.",
+      "longDescription": "A coordinated assortment built around the occasion, guest count, and flavors you want to serve.",
+      "icon": "tray",
+      "availability": "custom-order"
+    },
+    {
+      "slug": "gift-bags",
+      "name": "Gift bags",
+      "shortDescription": "A small treat with a personal touch.",
+      "longDescription": "Packaged sweets for birthdays, holidays, thank-you gifts, favors, and everyday surprises.",
+      "icon": "gift",
+      "availability": "custom-order"
+    },
+    {
+      "slug": "jars-more",
+      "name": "Jars & more",
+      "shortDescription": "Packaged treats made for gifting or keeping.",
+      "longDescription": "Cookie jars, snackable assortments, and other limited ideas that change throughout the year.",
+      "icon": "jar",
+      "availability": "limited"
+    },
+    {
+      "slug": "seasonal",
+      "name": "Seasonal specialties",
+      "shortDescription": "Limited treats for holidays and special moments.",
+      "longDescription": "Short-run flavors, themed packages, and occasion-specific desserts announced as they become available.",
+      "icon": "sparkle",
+      "availability": "seasonal"
+    }
+  ]
+}

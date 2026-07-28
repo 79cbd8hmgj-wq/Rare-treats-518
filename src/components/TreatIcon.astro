@@ -1,0 +1,40 @@
+---
+import type { TreatIcon } from "../data/content";
+
+interface Props {
+  icon: TreatIcon;
+}
+
+const { icon } = Astro.props;
+---
+
+<span class="icon" aria-hidden="true">
+  {icon === "cookie" && <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23"></circle><circle cx="24" cy="23" r="3"></circle><circle cx="40" cy="27" r="3"></circle><circle cx="29" cy="40" r="3"></circle><circle cx="43" cy="43" r="2.5"></circle></svg>}
+  {icon === "brownie" && <svg viewBox="0 0 64 64"><path d="M14 23 32 13l18 10-18 10Z"></path><path d="m14 23 18 10 18-10v20L32 53 14 43Z"></path><path d="m23 28 18-10"></path><path d="m32 33v20"></path></svg>}
+  {icon === "tray" && <svg viewBox="0 0 64 64"><path d="M10 40h44"></path><path d="M16 40c0-12 7-21 16-21s16 9 16 21"></path><path d="M27 19c0-4 2-7 5-7s5 3 5 7"></path><path d="M8 47h48"></path></svg>}
+  {icon === "gift" && <svg viewBox="0 0 64 64"><path d="M12 28h40v27H12Z"></path><path d="M9 19h46v12H9Z"></path><path d="M32 19v36"></path><path d="M31 18c-8 0-12-3-12-7 0-3 2-5 5-5 5 0 8 6 8 12Z"></path><path d="M33 18c8 0 12-3 12-7 0-3-2-5-5-5-5 0-8 6-8 12Z"></path></svg>}
+  {icon === "jar" && <svg viewBox="0 0 64 64"><path d="M20 10h24"></path><path d="M18 17h28"></path><path d="M20 17v8c-3 3-5 7-5 12v13c0 4 3 7 7 7h20c4 0 7-3 7-7V37c0-5-2-9-5-12v-8"></path><path d="M18 35h28"></path></svg>}
+  {icon === "sparkle" && <svg viewBox="0 0 64 64"><path d="M31 7c1 14 7 20 20 21-13 1-19 7-20 21-1-14-7-20-20-21 13-1 19-7 20-21Z"></path><path d="M50 7c.4 6 3 8 8 9-5 .4-8 3-8 9-.4-6-3-8-8-9 5-.4 8-3 8-9Z"></path></svg>}
+</span>
+
+<style>
+  .icon {
+    display: inline-grid;
+    width: 3.4rem;
+    height: 3.4rem;
+    place-items: center;
+    border: 1px solid rgba(39, 27, 69, 0.12);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.74);
+    color: var(--blueberry);
+  }
+
+  svg {
+    width: 1.9rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.2;
+  }
+</style>

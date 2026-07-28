@@ -1,0 +1,155 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TreatIcon from "../components/TreatIcon.astro";
+import { treats } from "../data/content";
+---
+
+<BaseLayout title="Treats" description="Explore the rotating homemade dessert categories available from Rare Treats 518.">
+  <section class="page-hero">
+    <div class="site-shell">
+      <p class="eyebrow">The treat table</p>
+      <h1>A menu built to rotate.</h1>
+      <p class="lede">{treats.intro}</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="site-shell catalog">
+      {treats.categories.map((category, index) => (
+        <article id={category.slug} class="catalog-row">
+          <div class:list={["number", `tone-${(index % 3) + 1}`]}><span>0{index + 1}</span><TreatIcon icon={category.icon} /></div>
+          <div>
+            <h2>{category.name}</h2>
+            <p class="lede">{category.longDescription}</p>
+          </div>
+          <div class="availability">
+            <span>{category.availability.replace("-", " ")}</span>
+            <a href="/custom-orders">Ask about this category →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section seasonal-band">
+    <div class="site-shell seasonal-grid">
+      <div>
+        <p class="eyebrow">Limited by design</p>
+        <h2>Seasonal treats do not stay forever.</h2>
+      </div>
+      <div>
+        <p class="lede">Holiday boxes, themed gift bags, limited flavors, and market-day specials are announced when they are ready. Instagram is the best place to see what is current.</p>
+        <a class="button" href="https://www.instagram.com/raretreats518/" target="_blank" rel="noreferrer">See current updates</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .catalog {
+    border-top: 1px solid var(--line);
+  }
+
+  .catalog-row {
+    display: grid;
+    grid-template-columns: 8rem 1fr minmax(13rem, 0.35fr);
+    gap: clamp(1.5rem, 5vw, 4rem);
+    align-items: center;
+    padding-block: clamp(2rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .number {
+    display: flex;
+    min-height: 7.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    border-radius: 1.4rem;
+  }
+
+  .number > span {
+    align-self: flex-start;
+    color: var(--blueberry-soft);
+    font-size: 0.72rem;
+    font-weight: 850;
+  }
+
+  .tone-1 { background: rgba(117, 213, 208, 0.22); }
+  .tone-2 { background: rgba(246, 154, 190, 0.18); }
+  .tone-3 { background: rgba(183, 155, 232, 0.2); }
+
+  h2 {
+    margin-bottom: 0.8rem;
+  }
+
+  .catalog-row .lede {
+    max-width: 43rem;
+    margin-bottom: 0;
+  }
+
+  .availability {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+  }
+
+  .availability span {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--blueberry-soft);
+    font-size: 0.7rem;
+    font-weight: 850;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .availability a {
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .seasonal-band {
+    background: var(--blueberry);
+    color: white;
+  }
+
+  .seasonal-band p {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .seasonal-band .eyebrow {
+    color: var(--aqua);
+  }
+
+  .seasonal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 8vw, 7rem);
+    align-items: end;
+  }
+
+  .seasonal-grid h2 {
+    max-width: 12ch;
+    margin-bottom: 0;
+  }
+
+  .seasonal-grid .button {
+    border-color: white;
+    background: white;
+    color: var(--blueberry);
+  }
+
+  @media (max-width: 780px) {
+    .catalog-row,
+    .seasonal-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .number {
+      max-width: 8rem;
+    }
+  }
+</style>
