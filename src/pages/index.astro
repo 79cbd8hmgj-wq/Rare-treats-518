@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TreatCard from '../components/TreatCard.astro';
+import { site, treatCategories } from '../data/site';
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <h1>{site.business.tagline}</h1>
+        <p>
+          Homemade cookies, brownies, dessert trays, gift-ready treats, and seasonal creations from
+          {site.business.name}.
+        </p>
+        <div class="button-row">
+          <a class="button" href="/treats">Explore the treats</a>
+          <a class="button button-secondary" href="/custom-orders">Request a custom order</a>
+        </div>
+        <p class="hero-note">Based in {site.business.location} · Market and custom-order availability</p>
+      </div>
+      <div class="hero-art" aria-label="Temporary Rare Treats 518 brand artwork">
+        <div class="hero-heart">
+          <img src="/brand-mark.svg" width="260" height="260" alt="Rare Treats 518 pastel heart mark" />
+        </div>
+        <div class="hero-photo-slot">
+          <span>Real product photo coming next</span>
+        </div>
+        <div class="sprinkle sprinkle-one"></div>
+        <div class="sprinkle sprinkle-two"></div>
+        <div class="sprinkle sprinkle-three"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-intro">
+    <div class="shell split-heading">
+      <div>
+        <p class="section-label">What Misty makes</p>
+        <h2>Familiar favorites with a personal touch.</h2>
+      </div>
+      <p>
+        Availability changes with markets, seasons, and custom requests. The website will show current
+        offerings once Misty confirms the first public menu.
+      </p>
+    </div>
+    <div class="shell treat-grid">
+      {treatCategories.map((category, index) => <TreatCard {...category} index={index} />)}
+    </div>
+    <div class="shell section-action"><a class="text-link" href="/treats">See the treat guide →</a></div>
+  </section>
+
+  <section class="section custom-band">
+    <div class="shell custom-grid">
+      <div class="custom-art" aria-hidden="true">
+        <div class="stacked-card card-a">Celebrate</div>
+        <div class="stacked-card card-b">Share</div>
+        <div class="stacked-card card-c">Enjoy</div>
+      </div>
+      <div>
+        <p class="section-label">Custom orders</p>
+        <h2>Start with the occasion. Misty will help with the treats.</h2>
+        <p>{site.customOrders.intro}</p>
+        <a class="button" href="/custom-orders">How custom requests work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section markets-preview">
+    <div class="shell markets-grid">
+      <div>
+        <p class="section-label">Markets & pop-ups</p>
+        <h2>Find Rare Treats 518 around the Capital Region.</h2>
+        <p>{site.markets.intro}</p>
+        <a class="button button-secondary" href="/markets">View market information</a>
+      </div>
+      <div class="market-board">
+        <span class="market-board-title">Next event</span>
+        <strong>Dates will be added after Misty confirms the schedule.</strong>
+        <a href={site.markets.updatesUrl} target="_blank" rel="noreferrer">Check Instagram for current updates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section owner-preview">
+    <div class="shell owner-grid">
+      <div class="owner-photo-slot"><span>Owner portrait needed</span></div>
+      <div>
+        <p class="section-label">Meet the maker</p>
+        <h2>Made by Misty in Troy, New York.</h2>
+        <p>
+          Rare Treats 518 is an owner-led local business built around homemade sweets, community markets,
+          and treats made for real celebrations. Misty’s full story will be added after she approves the
+          biography.
+        </p>
+        <a class="text-link" href="/about">About Rare Treats 518 →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

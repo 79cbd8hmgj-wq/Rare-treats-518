@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  availability: string;
+  index?: number;
+}
+
+const { name, description, availability, index = 0 } = Astro.props;
+const variant = `treat-card-${(index % 3) + 1}`;
+---
+
+<article class:list={["treat-card", variant]}>
+  <div class="treat-art" aria-hidden="true">
+    <span>{name.slice(0, 1)}</span>
+  </div>
+  <div>
+    <h3>{name}</h3>
+    <p>{description}</p>
+    <span class="availability">{availability}</span>
+  </div>
+</article>
