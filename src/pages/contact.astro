@@ -3,27 +3,38 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/content";
 ---
 
-<BaseLayout title="Contact" description="Contact Rare Treats 518 in Troy, New York through its official Instagram account.">
+<BaseLayout title="Contact" description="Contact Rare Treats 518 in Troy, New York through Instagram or Facebook.">
   <section class="page-hero contact-hero">
     <div class="site-shell hero-grid">
       <div>
         <p class="eyebrow">Contact Rare Treats 518</p>
         <h1>Send me a message.</h1>
-        <p class="lede">Use Instagram for custom orders, treat questions, and market updates. Include your date and what you have in mind so I can give you a useful answer.</p>
+        <p class="lede">Instagram is the best place for custom orders. You can also follow Rare Treats 518 on Facebook for new treats and market updates.</p>
       </div>
-      <a class="contact-card" href={site.social.instagram} target="_blank" rel="noreferrer">
-        <span>Instagram</span>
-        <strong>@raretreats518</strong>
-        <p>Custom orders, treat questions, and market updates</p>
-        <i>Message me →</i>
-      </a>
+      <div class="contact-options">
+        <a class="contact-card" href={site.social.instagram} target="_blank" rel="noreferrer">
+          <span>Instagram</span>
+          <strong>@raretreats518</strong>
+          <p>Custom orders, treat questions, and market updates</p>
+          <i>Message me →</i>
+        </a>
+        {site.social.facebook && (
+          <a class="facebook-card" href={site.social.facebook} target="_blank" rel="noreferrer">
+            <div>
+              <span>Facebook</span>
+              <strong>Rare Treats 518</strong>
+            </div>
+            <i>Visit page →</i>
+          </a>
+        )}
+      </div>
     </div>
   </section>
 
   <section class="section-tight contact-notes">
     <div class="site-shell notes-grid">
       <article><span>01</span><h2>Ordering treats</h2><p>Send the date, how many people, what you’re celebrating, and what sounds good.</p><a href="/custom-orders">See what to include →</a></article>
-      <article><span>02</span><h2>Finding a market</h2><p>Instagram is where I post confirmed dates and what I’m bringing.</p><a href="/markets">See market information →</a></article>
+      <article><span>02</span><h2>Finding a market</h2><p>Instagram and Facebook are where I post confirmed dates and what I’m bringing.</p><a href="/markets">See market information →</a></article>
       <article><span>03</span><h2>Quick questions</h2><p>The FAQ covers payment, pickup, ingredients, changes, and shipping.</p><a href="/faq">Read the FAQ →</a></article>
     </div>
   </section>
@@ -37,6 +48,11 @@ import { site } from "../data/content";
     align-items: center;
   }
 
+  .contact-options {
+    display: grid;
+    gap: 0.85rem;
+  }
+
   .contact-card {
     display: block;
     padding: clamp(1.7rem, 5vw, 3.3rem);
@@ -48,8 +64,9 @@ import { site } from "../data/content";
     transition: transform 180ms ease;
   }
 
-  .contact-card:hover {
-    transform: translateY(-4px) rotate(-1deg);
+  .contact-card:hover,
+  .facebook-card:hover {
+    transform: translateY(-4px);
   }
 
   .contact-card span {
@@ -73,10 +90,42 @@ import { site } from "../data/content";
     color: rgba(255,255,255,.68);
   }
 
-  .contact-card i {
+  .contact-card i,
+  .facebook-card i {
     font-size: .85rem;
     font-style: normal;
     font-weight: 800;
+  }
+
+  .facebook-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.84);
+    color: var(--blueberry);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform 180ms ease;
+  }
+
+  .facebook-card span {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: var(--blush-deep);
+    font-size: 0.68rem;
+    font-weight: 850;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  .facebook-card strong {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
   }
 
   .contact-notes {
