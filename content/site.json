@@ -15,9 +15,12 @@
   },
   "ordering": {
     "enabled": true,
-    "method": "Instagram direct message",
-    "leadTime": "Confirmed individually based on the order and date",
-    "delivery": "Pickup or delivery details are confirmed directly for each accepted order"
+    "method": "Instagram message",
+    "leadTime": "Ask early; timing depends on the date, quantity, and treats",
+    "delivery": "Pickup or local delivery is arranged for each accepted order"
   },
-  "hiddenServices": ["savory food", "catering"]
+  "hiddenServices": [
+    "savory food",
+    "catering"
+  ]
 }

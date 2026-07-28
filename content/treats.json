@@ -1,51 +1,51 @@
 {
-  "intro": "The menu changes with the season, the event, and what Misty is baking next. These categories show the kinds of treats Rare Treats 518 is known for without promising a fixed daily inventory.",
+  "intro": "I change the menu with the season and with what I’m making for each event. These are the main kinds of treats you can ask me about.",
   "categories": [
     {
       "slug": "cookies",
       "name": "Cookies",
-      "shortDescription": "Soft, chewy, and packed with flavor.",
-      "longDescription": "Classic favorites, rotating flavors, decorated options, and market-ready treat bags.",
+      "shortDescription": "Soft cookies, decorated cookies, and flavors that change through the year.",
+      "longDescription": "Soft cookies, decorated cookies, treat bags, and flavors that change throughout the year.",
       "icon": "cookie",
       "availability": "rotating"
     },
     {
       "slug": "brownies-bars",
       "name": "Brownies & bars",
-      "shortDescription": "Rich, fudgy, and made for sharing.",
-      "longDescription": "Brownies, blondies, layered bars, and seasonal variations sold individually or arranged for a group.",
+      "shortDescription": "Fudgy brownies, blondies, and layered bars.",
+      "longDescription": "Fudgy brownies, blondies, and layered bars for sharing—or keeping to yourself.",
       "icon": "brownie",
       "availability": "rotating"
     },
     {
       "slug": "dessert-trays",
       "name": "Dessert trays",
-      "shortDescription": "A mixed spread for parties and gatherings.",
-      "longDescription": "A coordinated assortment built around the occasion, guest count, and flavors you want to serve.",
+      "shortDescription": "A mix of treats sized for your gathering.",
+      "longDescription": "A mix of treats sized for your party, gathering, or work event.",
       "icon": "tray",
       "availability": "custom-order"
     },
     {
       "slug": "gift-bags",
       "name": "Gift bags",
-      "shortDescription": "A small treat with a personal touch.",
-      "longDescription": "Packaged sweets for birthdays, holidays, thank-you gifts, favors, and everyday surprises.",
+      "shortDescription": "Small packaged treats for gifts and favors.",
+      "longDescription": "Small packaged treats for birthdays, holidays, favors, thank-yous, and just-because gifts.",
       "icon": "gift",
       "availability": "custom-order"
     },
     {
       "slug": "jars-more",
       "name": "Jars & more",
-      "shortDescription": "Packaged treats made for gifting or keeping.",
-      "longDescription": "Cookie jars, snackable assortments, and other limited ideas that change throughout the year.",
+      "shortDescription": "Packaged treats and fun ideas that change often.",
+      "longDescription": "Cookie jars, snack mixes, and other packaged treats when I have something fun in mind.",
       "icon": "jar",
       "availability": "limited"
     },
     {
       "slug": "seasonal",
       "name": "Seasonal specialties",
-      "shortDescription": "Limited treats for holidays and special moments.",
-      "longDescription": "Short-run flavors, themed packages, and occasion-specific desserts announced as they become available.",
+      "shortDescription": "Holiday flavors and short-run treats.",
+      "longDescription": "Holiday flavors, themed packages, and short-run treats that only show up for a little while.",
       "icon": "sparkle",
       "availability": "seasonal"
     }

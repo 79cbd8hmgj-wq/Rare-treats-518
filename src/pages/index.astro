@@ -9,11 +9,11 @@ import { events, site, treats } from "../data/content";
     <div class="site-shell hero-grid">
       <div class="hero-copy">
         <p class="hero-location">Troy, New York</p>
-        <h1>Something sweet for the moment you are celebrating.</h1>
-        <p class="lede">Cookies, brownies, dessert trays, gift bags, and seasonal treats made by Misty for parties, holidays, market days, or an ordinary craving.</p>
+        <h1>Homemade treats for parties, holidays, and ordinary cravings.</h1>
+        <p class="lede">I make cookies, brownies, dessert trays, gift bags, and seasonal treats in Troy, New York. If you have a date or an idea, send me a message and we’ll figure out what fits.</p>
         <div class="button-row">
-          <a class="button" href="/custom-orders">Request a custom order</a>
-          <a class="button button-secondary" href="/treats">Explore the treats</a>
+          <a class="button" href="/custom-orders">Ask about an order</a>
+          <a class="button button-secondary" href="/treats">See the treats</a>
         </div>
       </div>
       <div class="hero-art" aria-label="Rare Treats 518 pastel heart brand artwork">
@@ -51,9 +51,9 @@ import { events, site, treats } from "../data/content";
       <div class="section-heading">
         <div>
           <p class="eyebrow">From the Rare Treats table</p>
-          <h2>Favorites that change with the season.</h2>
+          <h2>What’s on the table changes.</h2>
         </div>
-        <p>The menu is intentionally flexible. Start with the category that fits your occasion, then message Misty about the date, quantity, and flavors you have in mind.</p>
+        <p>I rotate flavors and seasonal treats, so the website shows the kinds of things I make instead of a fixed menu.</p>
       </div>
       <div class="treat-rail">
         {treats.categories.map((category, index) => (
@@ -61,7 +61,7 @@ import { events, site, treats } from "../data/content";
             <TreatIcon icon={category.icon} />
             <h3>{category.name}</h3>
             <p>{category.shortDescription}</p>
-            <a href={`/treats#${category.slug}`}>See the details</a>
+            <a href={`/treats#${category.slug}`}>Take a look</a>
           </article>
         ))}
       </div>
@@ -72,14 +72,14 @@ import { events, site, treats } from "../data/content";
     <div class="site-shell order-panel soft-panel">
       <div class="order-title">
         <p class="eyebrow">Custom orders</p>
-        <h2>Tell Misty what would make the occasion feel complete.</h2>
-        <p>Every order starts as a conversation, so nothing is promised before the date, quantity, flavors, and pickup or delivery details are confirmed.</p>
-        <a class="inline-link" href="/custom-orders">What to include in your message →</a>
+        <h2>Tell me what you’re planning.</h2>
+        <p>Send the date, how many people you’re ordering for, and what sounds good. I’ll let you know what I can make and what it will cost.</p>
+        <a class="inline-link" href="/custom-orders">See what to send me →</a>
       </div>
       <ol class="steps">
-        <li><span>01</span><div><h3>Share the idea</h3><p>Occasion, preferred date, guest count, and the treats you are considering.</p></div></li>
-        <li><span>02</span><div><h3>Confirm the details</h3><p>Misty reviews availability, options, final pricing, payment, and handoff details.</p></div></li>
-        <li><span>03</span><div><h3>Enjoy the treats</h3><p>Your accepted order is prepared for the date and arrangement you confirmed together.</p></div></li>
+        <li><span>01</span><div><h3>Send the basics</h3><p>The date, the occasion, how many people, and what you’re thinking about.</p></div></li>
+        <li><span>02</span><div><h3>We’ll figure it out</h3><p>I’ll reply with what I can make, the price, and the timing.</p></div></li>
+        <li><span>03</span><div><h3>Set the details</h3><p>Payment and pickup or delivery are arranged before the order is accepted.</p></div></li>
       </ol>
     </div>
   </section>
@@ -95,11 +95,11 @@ import { events, site, treats } from "../data/content";
       </div>
       <div class="market-copy">
         <p class="eyebrow">Markets & pop-ups</p>
-        <h2>Find the table, meet Misty, and see what is fresh that day.</h2>
+        <h2>Come say hi at the next market.</h2>
         <p class="lede">{events.announcement}</p>
         <div class="button-row">
           <a class="button" href={site.social.instagram} target="_blank" rel="noreferrer">Follow on Instagram</a>
-          <a class="button button-secondary" href="/markets">About market days</a>
+          <a class="button button-secondary" href="/markets">Find me at a market</a>
         </div>
       </div>
     </div>
@@ -109,11 +109,11 @@ import { events, site, treats } from "../data/content";
     <div class="site-shell founder-grid">
       <div>
         <p class="eyebrow">Made in Troy</p>
-        <h2>A local business built around the joy of sharing food.</h2>
+        <h2>Made by Misty in Troy.</h2>
       </div>
       <div>
-        <p class="lede">Rare Treats 518 is owned by Misty Bensalah. The brand brings homemade desserts to custom orders, community events, and local markets across the Capital Region.</p>
-        <a class="inline-link" href="/about">Meet Misty and read the story →</a>
+        <p class="lede">I’m Misty, the person behind Rare Treats 518. I make homemade desserts for custom orders, local markets, and community events around the Capital Region.</p>
+        <a class="inline-link" href="/about">A little more about me →</a>
       </div>
     </div>
   </section>
@@ -121,9 +121,9 @@ import { events, site, treats } from "../data/content";
   <section class="section final-cta">
     <div class="site-shell final-card">
       <p class="eyebrow">Start with a message</p>
-      <h2>Have a date, celebration, or treat idea in mind?</h2>
-      <p>Send Misty the basics and she can let you know what is possible.</p>
-      <a class="button" href="/custom-orders">Plan a custom order</a>
+      <h2>Have something in mind?</h2>
+      <p>Send me the date and the treats you’re thinking about. I’ll take it from there.</p>
+      <a class="button" href="/custom-orders">Ask about an order</a>
     </div>
   </section>
 </BaseLayout>
