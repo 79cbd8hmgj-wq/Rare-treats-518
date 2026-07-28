@@ -6,6 +6,7 @@ const files = [
   "content/events.json",
   "content/policies.json",
   "content/site.json",
+  "src/components/Footer.astro",
   "src/pages/index.astro",
   "src/pages/treats.astro",
   "src/pages/custom-orders.astro",
@@ -23,7 +24,9 @@ const forbiddenPhrases = [
   "before anything is promised",
   "the table changes every time you find it",
   "owner-led",
-  "final public policy is approved"
+  "final public policy is approved",
+  "—",
+  "–"
 ];
 
 const requiredMarkers = new Map([
@@ -40,7 +43,7 @@ for (const path of files) {
   const violations = findVoiceViolations(content, forbiddenPhrases);
 
   for (const phrase of violations) {
-    console.error(`${path}: remove template phrase "${phrase}"`);
+    console.error(`${path}: remove template wording or punctuation "${phrase}"`);
     failed = true;
   }
 
