@@ -26,6 +26,16 @@ jobs:
         run: |
           cat .bootstrap/part-*.txt | tr -d '\n' | base64 --decode > /tmp/rare-treats-foundation.tar.gz
           tar -xzf /tmp/rare-treats-foundation.tar.gz -C "$GITHUB_WORKSPACE"
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('src/data/content.ts')
+          content = path.read_text()
+          content = content.replace(
+              'export const treats = treatsData as typeof treatsData & { categories: TreatCategory[] };',
+              'export const treats = treatsData as unknown as Omit<typeof treatsData, "categories"> & { categories: TreatCategory[] };'
+          )
+          path.write_text(content)
+          PY
       - name: Generate lockfile and validate
         run: |
           npm install --package-lock-only
