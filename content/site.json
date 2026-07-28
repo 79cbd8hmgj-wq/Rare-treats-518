@@ -1,0 +1,92 @@
+{
+  "business": {
+    "name": "Rare Treats 518",
+    "ownerName": "Misty Bensalah",
+    "location": "Troy, New York",
+    "tagline": "Homemade with love. Made for you.",
+    "description": "Homemade sweets, seasonal favorites, and custom treats from Rare Treats 518.",
+    "instagramHandle": "raretreats518",
+    "instagramUrl": "https://www.instagram.com/raretreats518/",
+    "facebookUrl": "",
+    "publicEmail": "",
+    "publicPhone": ""
+  },
+  "features": {
+    "onlineOrdering": false,
+    "catering": false,
+    "savoryFood": false,
+    "customOrderRequests": true,
+    "marketsAndEvents": true
+  },
+  "navigation": [
+    { "label": "Treats", "href": "/treats" },
+    { "label": "Custom Orders", "href": "/custom-orders" },
+    { "label": "Markets", "href": "/markets" },
+    { "label": "About", "href": "/about" }
+  ],
+  "treatCategories": [
+    {
+      "name": "Cookies",
+      "description": "Soft, chewy, and packed with flavor.",
+      "availability": "Rotating flavors"
+    },
+    {
+      "name": "Brownies",
+      "description": "Rich, fudgy, and generously portioned.",
+      "availability": "Market and custom-order availability"
+    },
+    {
+      "name": "Dessert trays",
+      "description": "A shareable mix for gatherings, gifts, and celebrations.",
+      "availability": "Custom request"
+    },
+    {
+      "name": "Gift bags",
+      "description": "A ready-to-share assortment for someone special.",
+      "availability": "Seasonal and custom availability"
+    },
+    {
+      "name": "Jars and more",
+      "description": "Layered sweets and limited creations that change with the season.",
+      "availability": "Limited drops"
+    },
+    {
+      "name": "Seasonal specials",
+      "description": "Holiday and event-inspired treats announced through social media.",
+      "availability": "Limited time"
+    }
+  ],
+  "customOrders": {
+    "enabled": true,
+    "intro": "Tell Misty what you are celebrating, when you need it, and what kind of treats you have in mind.",
+    "requestMethod": "Instagram message",
+    "requestUrl": "https://www.instagram.com/raretreats518/",
+    "requiredDetails": [
+      "Requested date",
+      "Treat type or theme",
+      "Approximate quantity",
+      "Flavor preferences",
+      "Allergy or ingredient concerns",
+      "Budget range"
+    ]
+  },
+  "markets": {
+    "intro": "Rare Treats 518 regularly appears at local markets and community events around the Capital Region.",
+    "confirmedEvents": [],
+    "updatesUrl": "https://www.instagram.com/raretreats518/"
+  },
+  "policies": {
+    "status": "draft",
+    "allergenNotice": "Rare Treats 518 works in a kitchen that may handle common allergens. Final allergen language requires owner approval.",
+    "orderNotice": "Custom-order availability, payment terms, pickup details, and cancellation rules are confirmed directly before an order is accepted."
+  },
+  "launch": {
+    "ownerApprovedCopy": false,
+    "logoPublicationApproved": false,
+    "photoPublicationApproved": false,
+    "officialContactConfirmed": false,
+    "customOrderTermsConfirmed": false,
+    "policiesApproved": false,
+    "productionUrlConfirmed": false
+  }
+}
